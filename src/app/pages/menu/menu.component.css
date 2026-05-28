@@ -77,9 +77,6 @@
 .section-title { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.1em; color: var(--gold-light); flex: 1; }
 .section-count { font-size: 0.7rem; color: var(--text-muted); background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 0.1rem 0.5rem; }
 
-.price-legend  { display: flex; justify-content: flex-end; padding: 0.28rem 0 0.1rem; }
-.legend-half, .legend-full { width: 72px; text-align: center; font-size: 0.63rem; font-weight: 700; letter-spacing: 0.08em; color: var(--text-muted); }
-
 /* ── Discount ───────────────────────────────────── */
 .discount-banner {
   position: relative; z-index: 1;
@@ -91,36 +88,47 @@
   letter-spacing: 0.03em;
 }
 
-.price-original {
-  display: block;
-  font-size: 0.68rem;
-  color: var(--text-muted);
-  text-decoration: line-through;
-  line-height: 1.2;
-}
-
-.item-list     { list-style: none; padding: 0; margin: 0; }
-.item-card     { display: flex; align-items: center; justify-content: space-between; padding: 0.68rem 0.25rem; border-bottom: 1px solid var(--border); transition: background 0.15s; border-radius: 8px; gap: 0.5rem; }
+/* ── Item Cards ─────────────────────────────────── */
+.item-list   { list-style: none; padding: 0; margin: 0; }
+.item-card   { display: flex; align-items: center; gap: 0.85rem; padding: 0.8rem 0.5rem; border-bottom: 1px solid var(--border); border-radius: 10px; transition: background 0.15s; }
 .item-card:hover { background: var(--dark-card); }
 
-.item-left     { display: flex; align-items: flex-start; gap: 0.5rem; flex: 1; min-width: 0; }
+.item-img-wrap {
+  position: relative; flex-shrink: 0;
+  width: 88px; height: 88px;
+  border-radius: 10px; overflow: hidden;
+  background: var(--surface);
+}
+.item-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.item-img-wrap.img-error { display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+.item-img-wrap.img-error::after { content: '🍽️'; }
 
-.veg-indicator { flex-shrink: 0; width: 16px; height: 16px; border-radius: 3px; border: 1.5px solid #22a722; display: flex; align-items: center; justify-content: center; margin-top: 3px; }
-.veg-dot       { width: 8px; height: 8px; border-radius: 50%; background: #22a722; }
-.veg-indicator.nonveg { border-color: #c0392b; }
-.veg-indicator.nonveg .veg-dot { background: #c0392b; border-radius: 0; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); width: 9px; height: 9px; }
+.veg-badge {
+  position: absolute; top: 5px; left: 5px;
+  width: 14px; height: 14px; border-radius: 2px;
+  border: 1.5px solid #22a722; background: rgba(0,0,0,0.55);
+  display: flex; align-items: center; justify-content: center;
+}
+.veg-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: #22a722; }
+.veg-badge.nonveg { border-color: #c0392b; }
+.veg-badge.nonveg .veg-badge-dot { background: #c0392b; border-radius: 0; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); width: 8px; height: 8px; }
 
-.item-info     { display: flex; flex-direction: column; gap: 0.12rem; min-width: 0; }
-.item-name     { font-size: 0.9rem; font-weight: 500; color: var(--text-main); line-height: 1.3; }
+.item-details  { flex: 1; min-width: 0; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+.item-info     { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+.item-name     { font-size: 0.95rem; font-weight: 600; color: var(--text-main); line-height: 1.3; }
 .popular-badge { font-size: 0.63rem; color: var(--gold); }
 
-.item-prices   { display: flex; flex-shrink: 0; }
-.price-cell    { width: 72px; text-align: center; font-size: 0.88rem; font-weight: 600; }
-.half-price    { color: var(--text-muted); }
-.full-price    { color: var(--gold-light); }
-.rupee         { font-size: 0.7rem; opacity: 0.8; }
-.amount        { font-variant-numeric: tabular-nums; }
-.price-na      { color: var(--border); font-size: 1rem; }
+.item-prices   { flex-shrink: 0; display: flex; gap: 0.4rem; }
+.price-pill {
+  display: flex; flex-direction: column; align-items: center;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 0.22rem 0.6rem; min-width: 54px; gap: 0.02rem;
+}
+.full-pill { border-color: var(--gold); background: linear-gradient(135deg, var(--surface), color-mix(in srgb, var(--gold) 12%, transparent)); }
+.price-pill-label { font-size: 0.52rem; letter-spacing: 0.08em; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
+.price-pill-orig  { font-size: 0.58rem; color: var(--text-muted); text-decoration: line-through; line-height: 1; }
+.price-pill-val   { font-size: 1.05rem; font-weight: 700; color: var(--text-main); line-height: 1.2; font-variant-numeric: tabular-nums; }
+.full-pill .price-pill-val { color: var(--gold-light); }
 
 /* ── Footer ────────────────────────────────────── */
 .footer        { background: var(--dark-card); border-top: 1px solid var(--border); text-align: center; padding: 1rem; font-size: 0.73rem; color: var(--text-muted); line-height: 1.8; }
@@ -384,13 +392,14 @@
 @media (max-width: 480px) {
   .section-tabs   { top: 84px; }
   .menu-section   { scroll-margin-top: 150px; }
-  .price-cell     { width: 60px; font-size: 0.82rem; }
-  .legend-half, .legend-full { width: 60px; }
-  .item-card      { padding: 0.6rem 0.15rem; }
+  .item-card      { gap: 0.65rem; padding: 0.7rem 0.3rem; }
+  .item-img-wrap  { width: 76px; height: 76px; }
+  .price-pill-val { font-size: 0.95rem; }
 }
 @media (min-width: 600px) {
-  .item-card  { padding: 0.75rem 0.4rem; }
-  .item-name  { font-size: 0.97rem; }
-  .price-cell { width: 84px; font-size: 0.93rem; }
-  .legend-half, .legend-full { width: 84px; }
+  .item-card      { padding: 0.9rem 0.6rem; gap: 1rem; }
+  .item-img-wrap  { width: 96px; height: 96px; }
+  .item-name      { font-size: 1rem; }
+  .price-pill-val { font-size: 1.1rem; }
+  .price-pill     { min-width: 62px; padding: 0.28rem 0.75rem; }
 }

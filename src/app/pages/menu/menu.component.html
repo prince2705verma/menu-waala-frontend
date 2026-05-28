@@ -94,45 +94,43 @@
           <span class="section-count">{{ section.items.length }} items</span>
         </div>
 
-        <div class="price-legend">
-          <span class="legend-half">HALF</span>
-          <span class="legend-full">FULL</span>
-        </div>
-
         <ul class="item-list">
           @for (item of section.items; track item.name) {
             <li class="item-card">
-              <div class="item-left">
-                <span class="veg-indicator" [class.nonveg]="!item.isVeg">
-                  <span class="veg-dot"></span>
+              <div class="item-img-wrap">
+                <img class="item-img"
+                     [src]="itemImageUrl(item.name)"
+                     [alt]="item.name"
+                     loading="lazy"
+                     (error)="onImgError($event)" />
+                <span class="veg-badge" [class.nonveg]="!item.isVeg">
+                  <span class="veg-badge-dot"></span>
                 </span>
+              </div>
+              <div class="item-details">
                 <div class="item-info">
                   <span class="item-name">{{ item.name }}</span>
                   @if (item.popular) {
                     <span class="popular-badge">⭐ Popular</span>
                   }
                 </div>
-              </div>
-              <div class="item-prices">
-                <div class="price-cell half-price">
+                <div class="item-prices">
                   @if (item.half) {
+                    <div class="price-pill">
+                      <span class="price-pill-label">HALF</span>
+                      @if (discount > 0) {
+                        <span class="price-pill-orig">₹{{ item.half }}</span>
+                      }
+                      <span class="price-pill-val">₹{{ discount > 0 ? discounted(item.half) : item.half }}</span>
+                    </div>
+                  }
+                  <div class="price-pill full-pill">
+                    <span class="price-pill-label">FULL</span>
                     @if (discount > 0) {
-                      <span class="price-original">₹{{ item.half }}</span>
-                      <span class="rupee">₹</span><span class="amount">{{ discounted(item.half) }}</span>
-                    } @else {
-                      <span class="rupee">₹</span><span class="amount">{{ item.half }}</span>
+                      <span class="price-pill-orig">₹{{ item.full }}</span>
                     }
-                  } @else {
-                    <span class="price-na">—</span>
-                  }
-                </div>
-                <div class="price-cell full-price">
-                  @if (discount > 0) {
-                    <span class="price-original">₹{{ item.full }}</span>
-                    <span class="rupee">₹</span><span class="amount">{{ discounted(item.full) }}</span>
-                  } @else {
-                    <span class="rupee">₹</span><span class="amount">{{ item.full }}</span>
-                  }
+                    <span class="price-pill-val">₹{{ discount > 0 ? discounted(item.full) : item.full }}</span>
+                  </div>
                 </div>
               </div>
             </li>
