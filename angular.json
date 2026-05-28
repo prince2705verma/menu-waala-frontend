@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "restaurant-menu": {
+    "menu-waala-frontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:class": {
@@ -38,7 +38,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/restaurant-menu",
+            "outputPath": "dist/menu-waala-frontend",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -83,10 +83,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "restaurant-menu:build:production"
+              "buildTarget": "menu-waala-frontend:build:production"
             },
             "development": {
-              "buildTarget": "restaurant-menu:build:development"
+              "buildTarget": "menu-waala-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -94,7 +94,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "restaurant-menu:build"
+            "buildTarget": "menu-waala-frontend:build"
           }
         },
         "test": {
