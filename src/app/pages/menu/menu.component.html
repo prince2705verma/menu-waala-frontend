@@ -56,9 +56,11 @@
       <button class="pill" [class.active]="filterVeg==='veg'"    (click)="setFilter('veg')">
         <span class="dot dot-veg"></span> Veg
       </button>
-      <button class="pill" [class.active]="filterVeg==='nonveg'" (click)="setFilter('nonveg')">
-        <span class="dot dot-nonveg"></span> Non-Veg
-      </button>
+      @if (hasNonVeg) {
+        <button class="pill" [class.active]="filterVeg==='nonveg'" (click)="setFilter('nonveg')">
+          <span class="dot dot-nonveg"></span> Non-Veg
+        </button>
+      }
     </div>
   </div>
 
@@ -99,6 +101,7 @@
             <li class="item-card">
               <div class="item-img-wrap">
                 <img class="item-img"
+                     [class.item-img--product]="isProductImage(item.name)"
                      [src]="itemImageUrl(item.name)"
                      [alt]="item.name"
                      loading="lazy"

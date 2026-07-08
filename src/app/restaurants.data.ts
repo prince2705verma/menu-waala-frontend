@@ -96,7 +96,6 @@ export const RESTAURANTS_DATA: Restaurant[] = [
           { name: 'Mix Parantha',     half: 100, full: 180, isVeg: true,  popular: true  },
           { name: 'Onion Parantha',   half:  70, full: 130, isVeg: true                  },
           { name: 'Plain Parantha',   half:  50, full:  90, isVeg: true                  },
-          { name: 'Keema Parantha',   half: 120, full: 220, isVeg: false, popular: true  },
         ],
       },
       {
@@ -104,9 +103,6 @@ export const RESTAURANTS_DATA: Restaurant[] = [
         items: [
           { name: 'Paneer Tikka',         half: 200, full: 360, isVeg: true,  popular: true  },
           { name: 'Mushroom Tikka',       half: 170, full: 310, isVeg: true                  },
-          { name: 'Chicken Tikka',        half: 230, full: 420, isVeg: false, popular: true  },
-          { name: 'Seekh Kebab',          half: 220, full: 400, isVeg: false, popular: true  },
-          { name: 'Tandoori Chicken',     half: 250, full: 450, isVeg: false, popular: true  },
           { name: 'Hara Bhara Kebab',     half: 160, full: 290, isVeg: true                  },
         ],
       },
@@ -120,9 +116,6 @@ export const RESTAURANTS_DATA: Restaurant[] = [
           { name: 'Aloo Gobhi',           half: 140, full: 250, isVeg: true                  },
           { name: 'Mix Veg',              half: 150, full: 270, isVeg: true                  },
           { name: 'Chole Masala',         half: 160, full: 290, isVeg: true                  },
-          { name: 'Butter Chicken',       half: 260, full: 460, isVeg: false, popular: true  },
-          { name: 'Chicken Kadhai',       half: 250, full: 440, isVeg: false                 },
-          { name: 'Mutton Curry',         half: 300, full: 540, isVeg: false, popular: true  },
         ],
       },
       {
@@ -131,8 +124,6 @@ export const RESTAURANTS_DATA: Restaurant[] = [
           { name: 'Steamed Rice',         half:  80, full: 140, isVeg: true                  },
           { name: 'Jeera Rice',           half: 100, full: 180, isVeg: true,  popular: true  },
           { name: 'Veg Biryani',          half: 190, full: 340, isVeg: true                  },
-          { name: 'Chicken Biryani',      half: 230, full: 420, isVeg: false, popular: true  },
-          { name: 'Mutton Biryani',       half: 290, full: 520, isVeg: false, popular: true  },
         ],
       },
       {
@@ -174,10 +165,6 @@ export const RESTAURANTS_DATA: Restaurant[] = [
           { name: 'Dahi Ke Kebab',        half: 170, full: 300, isVeg: true,  popular: true  },
           { name: 'Hara Bhara Kebab',     half: 160, full: 290, isVeg: true                  },
           { name: 'Paneer Achari Tikka',  half: 190, full: 340, isVeg: true,  popular: true  },
-          { name: 'Chicken Malai Tikka',  half: 240, full: 440, isVeg: false, popular: true  },
-          { name: 'Galouti Kebab',        half: 280, full: 500, isVeg: false, popular: true  },
-          { name: 'Fish Amritsari',       half: 260, full: 460, isVeg: false                 },
-          { name: 'Lamb Seekh Kebab',     half: 300, full: 540, isVeg: false                 },
         ],
       },
       {
@@ -185,8 +172,6 @@ export const RESTAURANTS_DATA: Restaurant[] = [
         items: [
           { name: 'Tamatar Dhaniya Shorba', full: 130, isVeg: true,  popular: true },
           { name: 'Dal Shorba',             full: 120, isVeg: true                 },
-          { name: 'Murgh Shorba',           full: 160, isVeg: false                },
-          { name: 'Mulligatawny',           full: 150, isVeg: false, popular: true },
         ],
       },
       {
@@ -196,11 +181,6 @@ export const RESTAURANTS_DATA: Restaurant[] = [
           { name: 'Dal Bukhara',          half: 200, full: 360, isVeg: true,  popular: true  },
           { name: 'Shahi Korma (Veg)',    half: 220, full: 390, isVeg: true                  },
           { name: 'Palak Paneer',         half: 210, full: 370, isVeg: true                  },
-          { name: 'Chicken Chettinad',    half: 270, full: 480, isVeg: false, popular: true  },
-          { name: 'Mutton Nihari',        half: 340, full: 600, isVeg: false, popular: true  },
-          { name: 'Lamb Rogan Josh',      half: 320, full: 580, isVeg: false, popular: true  },
-          { name: 'Fish Moilee',          half: 290, full: 520, isVeg: false                 },
-          { name: 'Prawn Masala',         half: 310, full: 560, isVeg: false                 },
         ],
       },
       {
@@ -220,8 +200,6 @@ export const RESTAURANTS_DATA: Restaurant[] = [
           { name: 'Steamed Basmati',      half:  90, full: 160, isVeg: true                  },
           { name: 'Jeera Rice',           half: 110, full: 200, isVeg: true,  popular: true  },
           { name: 'Veg Tehri',            half: 180, full: 320, isVeg: true                  },
-          { name: 'Chicken Dum Biryani',  half: 260, full: 480, isVeg: false, popular: true  },
-          { name: 'Dum Gosht Biryani',    half: 340, full: 620, isVeg: false, popular: true  },
         ],
       },
       {

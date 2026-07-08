@@ -70,6 +70,12 @@ export class MenuComponent implements OnInit {
     return this.searchQuery.trim().length > 0 || this.filterVeg !== 'all';
   }
 
+  // True when the current restaurant has at least one non-veg item. Used to
+  // hide the Non-Veg filter pill on fully vegetarian menus.
+  get hasNonVeg(): boolean {
+    return this.restaurant?.sections.some(s => s.items.some(i => !i.isVeg)) ?? false;
+  }
+
   scrollToSection(name: string): void {
     this.activeSection = name;
     if (this.isSearching) return;
@@ -81,6 +87,31 @@ export class MenuComponent implements OnInit {
 
   isImageUrl(val: string): boolean {
     return /^https?:\/\//i.test(val);
+  }
+
+  // Local white-background product photos bundled with the app. Highest
+  // priority — used ahead of any remote source. Most specific patterns first.
+  private readonly LOCAL_IMAGES: [RegExp, string][] = [
+    [/aloo parantha/i,    'assets/menu/aloo-parantha.png'],
+    [/gob(h)?i parantha/i, 'assets/menu/gobhi-parantha.png'],
+    [/mix parantha/i,     'assets/menu/mix-parantha.png'],
+    [/mooli parantha/i,   'assets/menu/mooli-parantha.png'],
+    [/onion parantha/i,   'assets/menu/onion-parantha.png'],
+    [/paneer parantha/i,  'assets/menu/paneer-parantha.png'],
+    [/plain parantha/i,   'assets/menu/plain-parantha.png'],
+  ];
+
+  private localImageFor(name: string): string | null {
+    for (const [pattern, url] of this.LOCAL_IMAGES) {
+      if (pattern.test(name)) return url;
+    }
+    return null;
+  }
+
+  // True when the dish uses a local white-background product shot, so the
+  // template can render it "contained" on white instead of cropping a photo.
+  isProductImage(name: string): boolean {
+    return this.localImageFor(name) !== null;
   }
 
   // Curated, verified dish photos (Wikimedia Commons). Checked before the
@@ -200,6 +231,8 @@ export class MenuComponent implements OnInit {
   }
 
   itemImageUrl(name: string): string {
+    const local = this.localImageFor(name);
+    if (local) return local;
     for (const [pattern, url] of this.CURATED_IMAGES) {
       if (pattern.test(name)) {
         return url;
