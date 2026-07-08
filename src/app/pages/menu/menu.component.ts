@@ -83,6 +83,21 @@ export class MenuComponent implements OnInit {
     return /^https?:\/\//i.test(val);
   }
 
+  // Curated, verified dish photos (Wikimedia Commons). Checked before the
+  // loremflickr keyword fallback so these dishes always show the right food.
+  // Most specific patterns must come first.
+  private readonly CURATED_IMAGES: [RegExp, string][] = [
+    [/aloo parantha/i,   'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Aloo_Paratha_North_Indian.jpg/250px-Aloo_Paratha_North_Indian.jpg'],
+    [/gob(h)?i parantha/i,'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Picture_of_tasty_Gobi_paratha.JPG/250px-Picture_of_tasty_Gobi_paratha.JPG'],
+    [/mooli parantha/i,  'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Mooli_Paratha.jpg/250px-Mooli_Paratha.jpg'],
+    [/paneer parantha/i, 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Paneer_Cheese_Paratha.jpg/250px-Paneer_Cheese_Paratha.jpg'],
+    [/keema parantha/i,  'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Keema_Paratha_by_Preeti_Tamilarasan_%28cropped%29.jpg/250px-Keema_Paratha_by_Preeti_Tamilarasan_%28cropped%29.jpg'],
+    [/onion parantha/i,  'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Onion_Paratha_With_Curd.jpg/250px-Onion_Paratha_With_Curd.jpg'],
+    [/mix parantha/i,    'https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Paratha_Sabji_MA01.jpg/250px-Paratha_Sabji_MA01.jpg'],
+    [/plain parantha/i,  'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Aaloo_plain_paratha.jpg/250px-Aaloo_plain_paratha.jpg'],
+    [/laccha paratha/i,  'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Lachha-paratha.jpg/250px-Lachha-paratha.jpg'],
+  ];
+
   private readonly IMAGE_KEYWORDS: [RegExp, string][] = [
     [/aloo parantha/i,                'indian,paratha,potato'],
     [/gobhi parantha/i,               'cauliflower,paratha,indian'],
@@ -185,6 +200,11 @@ export class MenuComponent implements OnInit {
   }
 
   itemImageUrl(name: string): string {
+    for (const [pattern, url] of this.CURATED_IMAGES) {
+      if (pattern.test(name)) {
+        return url;
+      }
+    }
     for (const [pattern, keywords] of this.IMAGE_KEYWORDS) {
       if (pattern.test(name)) {
         return `https://loremflickr.com/120/120/${keywords}?lock=${this.nameHash(name)}`;
