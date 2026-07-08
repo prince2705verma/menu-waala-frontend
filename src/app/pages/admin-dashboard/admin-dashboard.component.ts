@@ -271,7 +271,7 @@ export class AdminDashboardComponent implements OnInit {
 
   logout(): void {
     this.auth.logout();
-    this.themeService.apply(THEME_PRESETS['Obsidian Gold']);
+    this.themeService.apply(THEME_PRESETS['Black Diamond']);
     this.router.navigate(['/admin/login']);
   }
 }

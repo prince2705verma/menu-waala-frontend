@@ -25,6 +25,12 @@ export interface Restaurant {
 
 export const THEME_PRESETS: Record<string, ThemeConfig> = {
 
+  // Premium pure-black theme with a champagne-gold accent. App default.
+  'Black Diamond': {
+    gold: '#d4af37', goldLight: '#f2d98e',
+    dark: '#000000', darkCard: '#0a0a0a', surface: '#151515', border: '#282828',
+    textMain: '#f7f4ec', textMuted: '#9c8a5e',
+  },
   'Obsidian Gold': {
     gold: '#c9a227', goldLight: '#e8c860',
     dark: '#0a0800', darkCard: '#110e04', surface: '#1a1608', border: '#2a2210',
@@ -75,6 +81,18 @@ export const THEME_PRESETS: Record<string, ThemeConfig> = {
     dark: '#03060f', darkCard: '#060d1a', surface: '#0a1428', border: '#101e3a',
     textMain: '#deeeff', textMuted: '#5080a0',
   },
+  // Deep forest greens with a soft sage accent (from palette reference).
+  'Forest Emerald': {
+    gold: '#8eb69b', goldLight: '#daf1de',
+    dark: '#051f20', darkCard: '#0b2b26', surface: '#163832', border: '#235347',
+    textMain: '#daf1de', textMuted: '#8eb69b',
+  },
+  // Muted navy slate with a warm tan accent (from palette reference).
+  'Twilight Navy': {
+    gold: '#f9b17a', goldLight: '#fbc79e',
+    dark: '#232741', darkCard: '#2d3250', surface: '#3a3f60', border: '#474769',
+    textMain: '#ffffff', textMuted: '#6b7f9d',
+  },
 };
 
 export const RESTAURANTS_DATA: Restaurant[] = [
@@ -83,7 +101,7 @@ export const RESTAURANTS_DATA: Restaurant[] = [
     name: 'Murthal Dhaba',
     tagline: 'Asli Desi Swaad, Seedha Dil Se',
     logo: '🫓',
-    theme: THEME_PRESETS['Obsidian Gold'],
+    theme: THEME_PRESETS['Black Diamond'],
     credentials: { username: 'admin', password: 'murthal123' },
     sections: [
       {
@@ -156,7 +174,7 @@ export const RESTAURANTS_DATA: Restaurant[] = [
     name: 'The Mayur',
     tagline: 'Regal Flavours, Timeless Elegance',
     logo: '🦚',
-    theme: THEME_PRESETS['Onyx Emerald'],
+    theme: THEME_PRESETS['Black Diamond'],
     credentials: { username: 'admin', password: 'mayur123' },
     sections: [
       {
