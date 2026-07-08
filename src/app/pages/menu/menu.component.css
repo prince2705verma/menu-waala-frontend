@@ -95,7 +95,7 @@
 
 .item-img-wrap {
   position: relative; flex-shrink: 0;
-  width: 120px; height: 120px;
+  width: 200px; height: 200px;
   border-radius: 10px; overflow: hidden;
   background: var(--surface);
 }
@@ -395,12 +395,12 @@
   .section-tabs   { top: 84px; }
   .menu-section   { scroll-margin-top: 150px; }
   .item-card      { gap: 0.65rem; padding: 0.7rem 0.3rem; }
-  .item-img-wrap  { width: 104px; height: 104px; }
+  .item-img-wrap  { width: 160px; height: 160px; }
   .price-pill-val { font-size: 0.95rem; }
 }
 @media (min-width: 600px) {
   .item-card      { padding: 0.9rem 0.6rem; gap: 1rem; }
-  .item-img-wrap  { width: 140px; height: 140px; }
+  .item-img-wrap  { width: 200px; height: 200px; }
   .item-name      { font-size: 1rem; }
   .price-pill-val { font-size: 1.1rem; }
   .price-pill     { min-width: 62px; padding: 0.28rem 0.75rem; }

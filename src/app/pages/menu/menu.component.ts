@@ -92,13 +92,13 @@ export class MenuComponent implements OnInit {
   // Local white-background product photos bundled with the app. Highest
   // priority — used ahead of any remote source. Most specific patterns first.
   private readonly LOCAL_IMAGES: [RegExp, string][] = [
-    [/aloo parantha/i,    'assets/menu/aloo-parantha.png'],
-    [/gob(h)?i parantha/i, 'assets/menu/gobhi-parantha.png'],
-    [/mix parantha/i,     'assets/menu/mix-parantha.png'],
-    [/mooli parantha/i,   'assets/menu/mooli-parantha.png'],
-    [/onion parantha/i,   'assets/menu/onion-parantha.png'],
-    [/paneer parantha/i,  'assets/menu/paneer-parantha.png'],
-    [/plain parantha/i,   'assets/menu/plain-parantha.png'],
+    [/aloo parantha/i,    'assets/menu/aloo-parantha.webp'],
+    [/gob(h)?i parantha/i, 'assets/menu/gobhi-parantha.webp'],
+    [/mix parantha/i,     'assets/menu/mix-parantha.webp'],
+    [/mooli parantha/i,   'assets/menu/mooli-parantha.webp'],
+    [/onion parantha/i,   'assets/menu/onion-parantha.webp'],
+    [/paneer parantha/i,  'assets/menu/paneer-parantha.webp'],
+    [/plain parantha/i,   'assets/menu/plain-parantha.webp'],
   ];
 
   private localImageFor(name: string): string | null {
