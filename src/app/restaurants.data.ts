@@ -133,7 +133,6 @@ export const RESTAURANTS_DATA: Restaurant[] = [
           { name: 'Paneer Butter Masala', half: 230, full: 400, isVeg: true,  popular: true  },
           { name: 'Aloo Gobhi',           half: 140, full: 250, isVeg: true                  },
           { name: 'Mix Veg',              half: 150, full: 270, isVeg: true                  },
-          { name: 'Chole Masala',         half: 160, full: 290, isVeg: true                  },
         ],
       },
       {
@@ -148,10 +147,8 @@ export const RESTAURANTS_DATA: Restaurant[] = [
         name: 'DRINKS', icon: '🥛',
         items: [
           { name: 'Sweet Lassi',          full:  80, isVeg: true,  popular: true },
-          { name: 'Namkeen Lassi',        full:  80, isVeg: true                 },
           { name: 'Mango Lassi',          full: 100, isVeg: true,  popular: true },
-          { name: 'Masala Chaas',         full:  60, isVeg: true                 },
-          { name: 'Fresh Lime Water',     full:  50, isVeg: true                 },
+          { name: 'Fresh Lime Soda',      full:  50, isVeg: true                 },
           { name: 'Soft Drinks',          full:  60, isVeg: true                 },
           { name: 'Mineral Water',        full:  30, isVeg: true                 },
         ],
@@ -161,8 +158,6 @@ export const RESTAURANTS_DATA: Restaurant[] = [
         items: [
           { name: 'Gajar Halwa',          half: 100, full: 180, isVeg: true,  popular: true },
           { name: 'Gulab Jamun',          half:  90, full: 160, isVeg: true                 },
-          { name: 'Kheer',                half: 100, full: 180, isVeg: true                 },
-          { name: 'Phirni',               half: 110, full: 200, isVeg: true,  popular: true },
           { name: 'Jalebi',               half:  80, full: 150, isVeg: true                 },
         ],
       },
@@ -240,7 +235,6 @@ export const RESTAURANTS_DATA: Restaurant[] = [
           { name: 'Gulab Jamun',          half: 100, full: 180, isVeg: true                 },
           { name: 'Kulfi',                full: 160, isVeg: true,  popular: true            },
           { name: 'Jalebi',               half: 110, full: 200, isVeg: true                 },
-          { name: 'Phirni',               half: 120, full: 210, isVeg: true                 },
         ],
       },
     ],

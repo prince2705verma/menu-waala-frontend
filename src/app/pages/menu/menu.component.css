@@ -394,8 +394,10 @@
 @media (max-width: 480px) {
   .section-tabs   { top: 84px; }
   .menu-section   { scroll-margin-top: 150px; }
-  .item-card      { gap: 0.65rem; padding: 0.7rem 0.3rem; }
+  .item-card      { gap: 1.65rem; padding: 0.7rem 0.3rem; }
   .item-img-wrap  { width: 160px; height: 160px; }
+  .item-details   { flex-direction: column; align-items: flex-start; justify-content: center; gap: 2.1rem; }
+  .item-prices    { flex-shrink: 1; }
   .price-pill-val { font-size: 0.95rem; }
 }
 @media (min-width: 600px) {
