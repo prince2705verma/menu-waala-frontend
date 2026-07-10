@@ -27,7 +27,7 @@ export class AdminLoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.themeService.apply(THEME_PRESETS['Black Diamond']);
+    this.themeService.apply(THEME_PRESETS['Rose Noir']);
     if (this.auth.isLoggedIn) {
       this.router.navigate(['/admin/dashboard']);
     }

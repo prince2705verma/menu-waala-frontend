@@ -31,6 +31,57 @@ export const THEME_PRESETS: Record<string, ThemeConfig> = {
     dark: '#000000', darkCard: '#0a0a0a', surface: '#151515', border: '#282828',
     textMain: '#f7f4ec', textMuted: '#9c8a5e',
   },
+
+  // ── Bold "wow-factor" themes — vivid accent gradients over jewel-toned bases ──
+
+  // Electric magenta → cyan over deep indigo. Neon-city energy.
+  'Cyberpunk Neon': {
+    gold: '#ff2e9a', goldLight: '#00e5ff',
+    dark: '#0a0612', darkCard: '#120a20', surface: '#1b1030', border: '#2e1a4e',
+    textMain: '#f5e9ff', textMuted: '#a06ec0',
+  },
+  // Sunset orange → hot pink over royal purple. Retro synthwave.
+  'Synthwave Sunset': {
+    gold: '#ff7a3d', goldLight: '#ff2e9a',
+    dark: '#12071a', darkCard: '#1c0c28', surface: '#281038', border: '#3d1a58',
+    textMain: '#ffe9f2', textMuted: '#b06a90',
+  },
+  // Mint → ice-blue over deep teal. Northern-lights glow.
+  'Aurora Frost': {
+    gold: '#3ef0c0', goldLight: '#7ce8ff',
+    dark: '#04120f', darkCard: '#081e1a', surface: '#0d2b26', border: '#164439',
+    textMain: '#e6fff6', textMuted: '#4fa08c',
+  },
+  // Violet → pink over cosmic black. Deep-space nebula.
+  'Galactic Violet': {
+    gold: '#a865ff', goldLight: '#ff86d8',
+    dark: '#0a0618', darkCard: '#130a26', surface: '#1d1038', border: '#301a58',
+    textMain: '#f2e9ff', textMuted: '#8a6ab0',
+  },
+  // Fiery orange → molten amber over charcoal. Lava heat.
+  'Molten Lava': {
+    gold: '#ff4d1c', goldLight: '#ffb020',
+    dark: '#0f0503', darkCard: '#1a0a04', surface: '#261006', border: '#3d1c0a',
+    textMain: '#ffece0', textMuted: '#b06a40',
+  },
+  // Electric blue → cyan over midnight navy. Cold and crisp.
+  'Electric Sapphire': {
+    gold: '#2f7bff', goldLight: '#38d6ff',
+    dark: '#03081a', darkCard: '#071026', surface: '#0c1a3a', border: '#152c58',
+    textMain: '#e6f0ff', textMuted: '#5a7ab0',
+  },
+  // Ruby red → coral over blackberry. Vivid and passionate.
+  'Ruby Bloom': {
+    gold: '#ff2d55', goldLight: '#ff9166',
+    dark: '#12040a', darkCard: '#1e0812', surface: '#2b0e1c', border: '#421830',
+    textMain: '#ffe9ee', textMuted: '#b0607a',
+  },
+  // Emerald → neon lime over forest black. Electric and fresh.
+  'Emerald Neon': {
+    gold: '#12e29a', goldLight: '#a6ff5c',
+    dark: '#05120c', darkCard: '#0a1e14', surface: '#102b1e', border: '#184433',
+    textMain: '#e6fff0', textMuted: '#4fa878',
+  },
   'Obsidian Gold': {
     gold: '#c9a227', goldLight: '#e8c860',
     dark: '#0a0800', darkCard: '#110e04', surface: '#1a1608', border: '#2a2210',
@@ -93,6 +144,54 @@ export const THEME_PRESETS: Record<string, ThemeConfig> = {
     dark: '#232741', darkCard: '#2d3250', surface: '#3a3f60', border: '#474769',
     textMain: '#ffffff', textMuted: '#6b7f9d',
   },
+  // Rose-gold on near-black — soft, luxurious, feminine-premium.
+  'Rose Noir': {
+    gold: '#e0a899', goldLight: '#f2c9bd',
+    dark: '#0b0708', darkCard: '#140e0f', surface: '#1e1618', border: '#2c2124',
+    textMain: '#f7ecec', textMuted: '#9a7d78',
+  },
+  // Platinum-cool metallic — sleek, modern, understated luxury.
+  'Platinum Frost': {
+    gold: '#c5cdd6', goldLight: '#e8edf2',
+    dark: '#070809', darkCard: '#101214', surface: '#191c1f', border: '#282d32',
+    textMain: '#eef2f5', textMuted: '#7a848e',
+  },
+  // Deep bordeaux with warm gold — wine-cellar, fine-dining feel.
+  'Burgundy Reserve': {
+    gold: '#c99a5b', goldLight: '#e6c088',
+    dark: '#0d0507', darkCard: '#180a0e', surface: '#241016', border: '#361a22',
+    textMain: '#f7ece8', textMuted: '#a07868',
+  },
+  // Sapphire blue on ink — cold, jewel-like, high-end tech premium.
+  'Royal Sapphire': {
+    gold: '#4d7cff', goldLight: '#88a8ff',
+    dark: '#04060f', darkCard: '#080d1c', surface: '#0e152b', border: '#182242',
+    textMain: '#e8eeff', textMuted: '#5a6ea0',
+  },
+  // Rich espresso browns with caramel — warm, cozy, cafe-luxury.
+  'Espresso Cream': {
+    gold: '#c8a06a', goldLight: '#e4c495',
+    dark: '#0b0705', darkCard: '#150f0a', surface: '#211812', border: '#31241a',
+    textMain: '#f5ede2', textMuted: '#9c8060',
+  },
+  // Champagne on graphite — timeless, elegant, red-carpet premium.
+  'Graphite Champagne': {
+    gold: '#e5d3a3', goldLight: '#f4e8c8',
+    dark: '#0a0a0b', darkCard: '#131415', surface: '#1d1e20', border: '#2c2e31',
+    textMain: '#f4f0e6', textMuted: '#8c8778',
+  },
+  // Amethyst violet on black — mysterious, opulent, jewel-toned.
+  'Black Amethyst': {
+    gold: '#a678d8', goldLight: '#c9a3ec',
+    dark: '#07050c', darkCard: '#0f0b18', surface: '#181026', border: '#261a3a',
+    textMain: '#f0eafb', textMuted: '#7a6398',
+  },
+  // Aged bronze on deep umber — antique, artisanal, heritage luxury.
+  'Antique Bronze': {
+    gold: '#cd7f32', goldLight: '#e3a55e',
+    dark: '#0a0704', darkCard: '#140e07', surface: '#1e160c', border: '#2e2214',
+    textMain: '#f4ebdd', textMuted: '#987850',
+  },
 };
 
 export const RESTAURANTS_DATA: Restaurant[] = [
@@ -101,19 +200,19 @@ export const RESTAURANTS_DATA: Restaurant[] = [
     name: 'Murthal Dhaba',
     tagline: 'Asli Desi Swaad, Seedha Dil Se',
     logo: '🫓',
-    theme: THEME_PRESETS['Black Diamond'],
+    theme: THEME_PRESETS['Rose Noir'],
     credentials: { username: 'admin', password: 'murthal123' },
     sections: [
       {
         name: 'PARANTHAS', icon: '🫓',
         items: [
-          { name: 'Aloo Parantha',    half:  80, full: 150, isVeg: true,  popular: true  },
-          { name: 'Gobhi Parantha',   half:  80, full: 150, isVeg: true                  },
-          { name: 'Mooli Parantha',   half:  80, full: 150, isVeg: true                  },
-          { name: 'Paneer Parantha',  half: 100, full: 180, isVeg: true,  popular: true  },
-          { name: 'Mix Parantha',     half: 100, full: 180, isVeg: true,  popular: true  },
-          { name: 'Onion Parantha',   half:  70, full: 130, isVeg: true                  },
-          { name: 'Plain Parantha',   half:  50, full:  90, isVeg: true                  },
+          { name: 'Aloo Parantha',    full: 150, isVeg: true,  popular: true  },
+          { name: 'Gobhi Parantha',   full: 150, isVeg: true                  },
+          { name: 'Mooli Parantha',   full: 150, isVeg: true                  },
+          { name: 'Paneer Parantha',  full: 180, isVeg: true,  popular: true  },
+          { name: 'Mix Parantha',     full: 180, isVeg: true,  popular: true  },
+          { name: 'Onion Parantha',   full: 130, isVeg: true                  },
+          { name: 'Plain Parantha',   full:  90, isVeg: true                  },
         ],
       },
       {
@@ -169,7 +268,7 @@ export const RESTAURANTS_DATA: Restaurant[] = [
     name: 'The Mayur',
     tagline: 'Regal Flavours, Timeless Elegance',
     logo: '🦚',
-    theme: THEME_PRESETS['Black Diamond'],
+    theme: THEME_PRESETS['Rose Noir'],
     credentials: { username: 'admin', password: 'mayur123' },
     sections: [
       {

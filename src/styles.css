@@ -1,13 +1,13 @@
-/* Global CSS variables — default is Velvet Noir, overridden at runtime by ThemeService */
+/* Global CSS variables — default is Rose Noir, overridden at runtime by ThemeService */
 :root {
-  --gold:       #c9a0b4;
-  --gold-light: #e8c8d8;
-  --dark:       #0d080c;
-  --dark-card:  #1a1020;
-  --surface:    #251530;
-  --border:     #352040;
-  --text-main:  #f5eef2;
-  --text-muted: #9a7888;
+  --gold:       #e0a899;
+  --gold-light: #f2c9bd;
+  --dark:       #0b0708;
+  --dark-card:  #140e0f;
+  --surface:    #1e1618;
+  --border:     #2c2124;
+  --text-main:  #f7ecec;
+  --text-muted: #9a7d78;
 }
 
 html, body {
