@@ -7,6 +7,7 @@ import { MenuSection } from '../../menu.data';
 import { RestaurantService } from '../../services/restaurant.service';
 import { ThemeService } from '../../services/theme.service';
 import { AuthService } from '../../services/auth.service';
+import { I18nService } from '../../services/i18n.service';
 
 @Component({
   selector: 'app-menu',
@@ -35,6 +36,7 @@ export class MenuComponent implements OnInit {
     private restaurantService: RestaurantService,
     private themeService: ThemeService,
     public auth: AuthService,
+    public i18n: I18nService,
   ) {}
 
   ngOnInit(): void {
@@ -55,7 +57,9 @@ export class MenuComponent implements OnInit {
       .map(s => ({
         ...s,
         items: s.items.filter(item => {
-          const matchSearch = !q || item.name.toLowerCase().includes(q);
+          const matchSearch = !q
+            || item.name.toLowerCase().includes(q)
+            || this.i18n.dish(item.name).toLowerCase().includes(q);
           const matchFilter =
             this.filterVeg === 'all' ||
             (this.filterVeg === 'veg' && item.isVeg) ||

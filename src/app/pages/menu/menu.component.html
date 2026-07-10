@@ -1,8 +1,8 @@
 @if (notFound) {
   <div class="not-found">
     <span>🍽️</span>
-    <h2>Restaurant not found</h2>
-    <p>Check the URL and try again.</p>
+    <h2>{{ i18n.ui('notFoundTitle') }}</h2>
+    <p>{{ i18n.ui('notFoundText') }}</p>
   </div>
 } @else if (restaurant) {
   @if (festivalClass) {
@@ -23,21 +23,29 @@
         </span>
         <div>
           <h1 class="restaurant-name">{{ restaurant.name }}</h1>
-          <p class="restaurant-tagline">{{ restaurant.tagline }}</p>
+          <p class="restaurant-tagline">{{ i18n.tagline(restaurant.tagline) }}</p>
         </div>
       </div>
-      @if (auth.isLoggedIn && auth.restaurantId === restaurant.id) {
-        <button class="admin-btn" (click)="goToAdmin()" title="Owner Dashboard">
-          ⚙️ <span class="admin-btn-label">Manage</span>
-        </button>
-      }
+      <div class="header-actions">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button class="lang-btn" [class.active]="i18n.lang() === 'en'"
+            (click)="i18n.setLang('en')" title="English">EN</button>
+          <button class="lang-btn" [class.active]="i18n.lang() === 'hi'"
+            (click)="i18n.setLang('hi')" title="हिंदी">हिं</button>
+        </div>
+        @if (auth.isLoggedIn && auth.restaurantId === restaurant.id) {
+          <button class="admin-btn" (click)="goToAdmin()" title="Owner Dashboard">
+            ⚙️ <span class="admin-btn-label">{{ i18n.ui('manage') }}</span>
+          </button>
+        }
+      </div>
     </div>
   </header>
 
   <!-- Discount banner -->
   @if (discount > 0) {
     <div class="discount-banner">
-      🎉 <strong>{{ discount }}% OFF</strong> on all items today!
+      🎉 <strong>{{ discount }}% {{ i18n.ui('offSuffix') }}</strong>
     </div>
   }
 
@@ -45,20 +53,20 @@
   <div class="search-bar sticky-bar">
     <div class="search-wrap">
       <span class="search-icon">🔍</span>
-      <input type="text" class="search-input" placeholder="Search dishes..."
+      <input type="text" class="search-input" [placeholder]="i18n.ui('searchPlaceholder')"
         [(ngModel)]="searchQuery" />
       @if (searchQuery) {
         <button class="clear-btn" (click)="clearSearch()">✕</button>
       }
     </div>
     <div class="filter-pills">
-      <button class="pill" [class.active]="filterVeg==='all'"    (click)="setFilter('all')">All</button>
+      <button class="pill" [class.active]="filterVeg==='all'"    (click)="setFilter('all')">{{ i18n.ui('all') }}</button>
       <button class="pill" [class.active]="filterVeg==='veg'"    (click)="setFilter('veg')">
-        <span class="dot dot-veg"></span> Veg
+        <span class="dot dot-veg"></span> {{ i18n.ui('veg') }}
       </button>
       @if (hasNonVeg) {
         <button class="pill" [class.active]="filterVeg==='nonveg'" (click)="setFilter('nonveg')">
-          <span class="dot dot-nonveg"></span> Non-Veg
+          <span class="dot dot-nonveg"></span> {{ i18n.ui('nonveg') }}
         </button>
       }
     </div>
@@ -72,7 +80,7 @@
           <button class="tab-btn" [class.active]="activeSection === section.name"
             (click)="scrollToSection(section.name)">
             <span class="tab-icon">{{ section.icon }}</span>
-            <span class="tab-label">{{ section.name }}</span>
+            <span class="tab-label">{{ i18n.section(section.name) }}</span>
           </button>
         }
       </div>
@@ -84,7 +92,7 @@
     @if (filteredSections.length === 0) {
       <div class="empty-state">
         <span class="empty-icon">🍽️</span>
-        <p>No dishes found. Try a different search.</p>
+        <p>{{ i18n.ui('emptyState') }}</p>
       </div>
     }
 
@@ -92,8 +100,8 @@
       <section class="menu-section" [id]="'section-' + section.name">
         <div class="section-header">
           <span class="section-icon">{{ section.icon }}</span>
-          <h2 class="section-title">{{ section.name }}</h2>
-          <span class="section-count">{{ section.items.length }} items</span>
+          <h2 class="section-title">{{ i18n.section(section.name) }}</h2>
+          <span class="section-count">{{ section.items.length }} {{ i18n.ui('items') }}</span>
         </div>
 
         <ul class="item-list">
@@ -112,15 +120,15 @@
               </div>
               <div class="item-details">
                 <div class="item-info">
-                  <span class="item-name">{{ item.name }}</span>
+                  <span class="item-name">{{ i18n.dish(item.name) }}</span>
                   @if (item.popular) {
-                    <span class="popular-badge">⭐ Popular</span>
+                    <span class="popular-badge">⭐ {{ i18n.ui('popular') }}</span>
                   }
                 </div>
                 <div class="item-prices">
                   @if (item.half) {
                     <div class="price-pill">
-                      <span class="price-pill-label">HALF</span>
+                      <span class="price-pill-label">{{ i18n.ui('half') }}</span>
                       @if (discount > 0) {
                         <span class="price-pill-orig">₹{{ item.half }}</span>
                       }
@@ -128,7 +136,7 @@
                     </div>
                   }
                   <div class="price-pill full-pill">
-                    <span class="price-pill-label">FULL</span>
+                    <span class="price-pill-label">{{ i18n.ui('full') }}</span>
                     @if (discount > 0) {
                       <span class="price-pill-orig">₹{{ item.full }}</span>
                     }
@@ -144,7 +152,7 @@
   </main>
 
   <footer class="footer">
-    <p>All prices are inclusive of taxes &nbsp;|&nbsp; Subject to availability</p>
+    <p>{{ i18n.ui('footerTaxes') }} &nbsp;|&nbsp; {{ i18n.ui('footerAvailability') }}</p>
     <p class="footer-brand">{{ restaurant.name }}</p>
   </footer>
 }
