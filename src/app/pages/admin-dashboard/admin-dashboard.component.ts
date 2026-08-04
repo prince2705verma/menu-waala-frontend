@@ -235,8 +235,11 @@ export class AdminDashboardComponent implements OnInit {
     const win = window.open('', '_blank');
     if (!win) return;
     const name = this.escapeHtml(this.restaurant.name);
-    const logo = this.escapeHtml(this.restaurant.logo);
     const url  = this.escapeHtml(this.menuUrl);
+    // Image logos need an absolute src — the print window has no base URL.
+    const logo = this.isImageUrl(this.restaurant.logo)
+      ? `<img class="brand" src="${this.escapeHtml(new URL(this.restaurant.logo, location.href).href)}" alt=""/>`
+      : this.escapeHtml(this.restaurant.logo);
     win.document.write(`<!DOCTYPE html><html><head>
       <title>${name} - Menu QR Code</title>
       <style>
@@ -244,6 +247,7 @@ export class AdminDashboardComponent implements OnInit {
         h1{margin:0 0 0.15rem}
         p{color:#666;margin:0 0 2rem;font-size:0.95rem}
         img{width:280px;height:280px;display:block;margin:0 auto}
+        h1 img.brand{width:auto;height:2.2rem;display:inline-block;margin:0 0.4rem 0 0;vertical-align:middle}
         .url{font-size:0.7rem;color:#aaa;margin-top:1.25rem;word-break:break-all}
       </style>
     </head><body>
@@ -260,8 +264,10 @@ export class AdminDashboardComponent implements OnInit {
     return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
+  // Remote URLs, bundled assets (assets/logos/…) and data URIs all render as
+  // an <img>; anything else is treated as an emoji/text logo.
   isImageUrl(val: string): boolean {
-    return /^https?:\/\//i.test(val);
+    return /^(https?:\/\/|data:image\/|\/|assets\/)/i.test(val);
   }
 
   // ─── Navigation ─────────────────────────────────────────────

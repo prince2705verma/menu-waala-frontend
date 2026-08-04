@@ -204,18 +204,6 @@ export const RESTAURANTS_DATA: Restaurant[] = [
     credentials: { username: 'admin', password: 'murthal123' },
     sections: [
       {
-        name: 'PARANTHAS', icon: '🫓',
-        items: [
-          { name: 'Aloo Parantha',    full: 150, isVeg: true,  popular: true  },
-          { name: 'Gobhi Parantha',   full: 150, isVeg: true                  },
-          { name: 'Mooli Parantha',   full: 150, isVeg: true                  },
-          { name: 'Paneer Parantha',  full: 180, isVeg: true,  popular: true  },
-          { name: 'Mix Parantha',     full: 180, isVeg: true,  popular: true  },
-          { name: 'Onion Parantha',   full: 130, isVeg: true                  },
-          { name: 'Plain Parantha',   full:  90, isVeg: true                  },
-        ],
-      },
-      {
         name: 'TANDOOR', icon: '🔥',
         items: [
           { name: 'Paneer Tikka',         half: 200, full: 360, isVeg: true,  popular: true  },
@@ -243,6 +231,18 @@ export const RESTAURANTS_DATA: Restaurant[] = [
         ],
       },
       {
+        name: 'PARANTHAS', icon: '🫓',
+        items: [
+          { name: 'Aloo Parantha',    full: 150, isVeg: true,  popular: true  },
+          { name: 'Gobhi Parantha',   full: 150, isVeg: true                  },
+          { name: 'Mooli Parantha',   full: 150, isVeg: true                  },
+          { name: 'Paneer Parantha',  full: 180, isVeg: true,  popular: true  },
+          { name: 'Mix Parantha',     full: 180, isVeg: true,  popular: true  },
+          { name: 'Onion Parantha',   full: 130, isVeg: true                  },
+          { name: 'Plain Parantha',   full:  90, isVeg: true                  },
+        ],
+      },
+      {
         name: 'DRINKS', icon: '🥛',
         items: [
           { name: 'Sweet Lassi',          full:  80, isVeg: true,  popular: true },
@@ -267,7 +267,7 @@ export const RESTAURANTS_DATA: Restaurant[] = [
     id: 'the-mayur',
     name: 'The Mayur',
     tagline: 'Regal Flavours, Timeless Elegance',
-    logo: '🦚',
+    logo: 'assets/logos/mayur-urban-spice.png',
     theme: THEME_PRESETS['Rose Noir'],
     credentials: { username: 'admin', password: 'mayur123' },
     sections: [

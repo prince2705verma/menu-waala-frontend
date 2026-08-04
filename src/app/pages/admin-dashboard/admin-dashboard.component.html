@@ -58,7 +58,7 @@
               {{ infoForm.logo || '🍽️' }}
             }
           </span>
-          <input type="text" [(ngModel)]="infoForm.logo" placeholder="🍽️ or https://..." class="logo-input" />
+          <input type="text" [(ngModel)]="infoForm.logo" placeholder="🍽️, assets/logos/... or https://..." class="logo-input" />
         </div>
         <p class="field-hint">Use an emoji for quick setup, or paste an image URL.</p>
       </div>
@@ -160,7 +160,11 @@
         <p class="preview-label">Live Preview</p>
         <div class="preview-card">
           <div class="preview-header">
-            <span>{{ restaurant.logo }}</span>
+            @if (isImageUrl(restaurant.logo)) {
+              <img [src]="restaurant.logo" alt="Logo" class="qr-logo-img" />
+            } @else {
+              <span>{{ restaurant.logo }}</span>
+            }
             <span class="preview-name">{{ restaurant.name }}</span>
           </div>
           <div class="preview-item">

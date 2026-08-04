@@ -89,8 +89,10 @@ export class MenuComponent implements OnInit {
   setFilter(v: 'all' | 'veg' | 'nonveg'): void { this.filterVeg = v; }
   clearSearch(): void { this.searchQuery = ''; }
 
+  // Remote URLs, bundled assets (assets/logos/…) and data URIs all render as
+  // an <img>; anything else is treated as an emoji/text logo.
   isImageUrl(val: string): boolean {
-    return /^https?:\/\//i.test(val);
+    return /^(https?:\/\/|data:image\/|\/|assets\/)/i.test(val);
   }
 
   // Local white-background product photos bundled with the app. Highest
